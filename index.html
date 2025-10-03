@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>webtaster — فحص روابط وملفات مشبوهة</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body dir="rtl">
+  <header class="site-header">
+    <div class="logo">
+      <h1><span class="neon">web</span><span class="accent">taster</span></h1>
+      <p class="tag">فحص عميق مختص بالأمن السيبراني — آمن وسهل الاستخدام</p>
+    </div>
+    <nav class="top-nav">
+      <button class="tab-btn active" data-target="scan-url">فحص رابط</button>
+      <button class="tab-btn" data-target="scan-file">فحص ملف</button>
+      <button class="tab-btn" data-target="scan-domain">فحص دومين / IP</button>
+      <button class="tab-btn" data-target="about">حول</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Scan URL -->
+    <section id="scan-url" class="panel active">
+      <h2>فحص رابط</h2>
+      <p class="muted">ألصق الرابط المشبوه هنا ليتم فحصه بواسطة فحوصات سلوكية وهيورستيك.</p>
+      <div class="form-row">
+        <input id="url-input" placeholder="https://example.com/..." type="url" />
+        <button id="scan-url-btn" class="primary">ابدأ الفحص</button>
+      </div>
+      <div id="url-results" class="results"></div>
+    </section>
+
+    <!-- Scan File -->
+    <section id="scan-file" class="panel">
+      <h2>فحص ملف</h2>
+      <p class="muted">ارفع ملفاً وسيحسب الموقع تجزئة SHA-256 لتقوم أنت بمقارنتها مع قواعد بيانات الفيروسات أو رفعها لمواقع فحص ملفات مشهورة.</p>
+      <div class="form-row">
+        <input id="file-input" type="file" />
+        <button id="scan-file-btn" class="primary">احسب SHA-256</button>
+      </div>
+      <div id="file-results" class="results"></div>
+    </section>
+
+    <!-- Scan Domain/IP -->
+    <section id="scan-domain" class="panel">
+      <h2>فحص دومين / IP</h2>
+      <p class="muted">تحقق من عناصر بسيطة: طول الدومين، وجود أرقام/حروف مشبوهة، TLD مشبوه، وما إلى ذلك.</p>
+      <div class="form-row">
+        <input id="domain-input" placeholder="example.com أو 1.2.3.4" />
+        <button id="scan-domain-btn" class="primary">تحقق</button>
+      </div>
+      <div id="domain-results" class="results"></div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="panel">
+      <h2>عن webtaster</h2>
+      <p>
+        webtaster هو واجهة فحص مبدئية مصممة لأغراض تحليل مبدئي وهيورستيك. لا يقوم الموقع بتنفيذ اختبارات اختراق أو مسح شبكات — فقط يفحص مدخلاتك محلياً ويحسب تجزئات ملفات، ويعطي توصيات لاحقة.
+      </p>
+      <ul>
+        <li>فحص روابط: ตรวจสอบ الطول، وجود اختصارات، حروف خادعة (punycode)، HTTPS، وغير ذلك.</li>
+        <li>فحص ملف: حساب SHA-256 (يمكنك رفع النتيجة إلى خدمات مثل VirusTotal يدوياً).</li>
+        <li>فحص دومين/IP: فحوصات هيورستيك بسيطة.</li>
+      </ul>
+    </section>
+
+    <!-- Support / Contact -->
+    <aside class="contact-card">
+      <h3>التواصل مع الدعم</h3>
+      <ul>
+        <li>الهاتف: <a href="tel:+9647741698544">07741698544</a></li>
+        <li>البريد: <a href="mailto:rkr445468@gmail.com">rkr445468@gmail.com</a></li>
+      </ul>
+      <p class="small muted">نحن نجيب عادةً داخل ساعات العمل، لا تتردد في إرسال الأمثلة أو روابط للاختبار (بشكل آمن).</p>
+    </aside>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>المطوّر: <strong>Rami-Alshurifi</strong></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
